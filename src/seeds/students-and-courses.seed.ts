@@ -29,8 +29,8 @@ export const courseAndStudentSeed = async (): Promise<void> => {
   const student2Entity = AppDataSource.manager.create(Students, student2);
 
   // Las guardamos en base de datos
-  // await AppDataSource.manager.save(player1Entity);
-  // await AppDataSource.manager.save(player2Entity);
+  await AppDataSource.manager.save(student1Entity);
+  await AppDataSource.manager.save(student2Entity);
 
   // Creamos equipo
   const courses = {
@@ -45,7 +45,7 @@ export const courseAndStudentSeed = async (): Promise<void> => {
   // Guardamos el equipo en BBDD
   await AppDataSource.manager.save(courseEntity);
 
-  console.log("Creados los dos jugadores y equipo");
+  console.log("Creados los dos estudiantes y cursos");
 
   // Cerramos la conexión
   await AppDataSource.destroy();

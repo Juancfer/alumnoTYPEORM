@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { connect } from "../databases/mongo-db.js";
+import { mongoConnect } from "../databases/mongo-db.js";
 import { Author, type IAuthor } from "../models/mongo/Author.js";
 
 const authorList: IAuthor[] = [
@@ -25,7 +25,7 @@ const authorList: IAuthor[] = [
 
 const authorSeed = async (): Promise<void> => {
   try {
-    await connect();
+    await mongoConnect();
     console.log("Tenemos conexión");
 
     // Borrar datos

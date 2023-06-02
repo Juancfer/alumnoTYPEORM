@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import { connect } from "../databases/mongo-db";
+import { mongoConnect } from "../databases/mongo-db";
 import { Book } from "../models/mongo/Book";
 import { Author } from "../models/mongo/Author";
 import { generateRandom } from "../utils/token";
 
 const bookRelationsSeed = async (): Promise<void> => {
   try {
-    await connect();
+    await mongoConnect();
     console.log("Tenemos conexión!");
 
     // Recuperamos libros y autores

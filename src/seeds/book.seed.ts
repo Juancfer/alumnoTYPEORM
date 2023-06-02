@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { connect } from "../databases/mongo-db.js";
+import { mongoConnect } from "../databases/mongo-db.js";
 import { Book, type IBook } from "../models/mongo/Book.js";
 import { faker } from "@faker-js/faker";
 
@@ -33,7 +33,7 @@ bookList.push(bookWithPublisher);
 
 const bookSeed = async (): Promise<void> => {
   try {
-    const database = await connect();
+    const database = await mongoConnect();
     console.log(`Tenemos conexión: ${database?.connection?.name as string}`);
 
     // Borrar datos

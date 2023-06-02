@@ -12,7 +12,7 @@
     "seed:authors": "node ./dist/seeds/author.seed.js",
     "seed:books": "node ./dist/seeds/book.seed.js",
     "seed:book-relations": "node ./dist/seeds/book-relations.seed.js",
-    "students-and-courses.seed": "ts-node-dev ./src/seeds/students-and-courses.seed.ts --ignore-watch",
+    "seed:students-and-courses": "ts-node-dev ./src/seeds/students-and-courses.seed.ts --ignore-watch",
     "seed:all": "npm run build && npm run seed:authors && npm run seed:books && npm run seed:book-relations",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
