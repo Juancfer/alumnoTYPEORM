@@ -14,6 +14,8 @@ import { mongoConnect } from "./databases/mongo-db";
 import { sqlConnect } from "./databases/sql-db";
 import { companyRouter } from "./routes/companys.routes";
 import { AppDataSource } from "./databases/typeorm-datasource";
+import { coursesRouter } from "./routes/courses.routes";
+import { studentRouter } from "./routes/student.routes";
 
 const main = async (): Promise<void> => {
   // Conexión a la BBDD
@@ -58,6 +60,8 @@ const main = async (): Promise<void> => {
   app.use("/book", bookRouter);
   app.use("/public", express.static("public"));
   app.use("/companys", companyRouter);
+  app.use("/students", studentRouter);
+  app.use("/courses", coursesRouter);
   app.use("/", router);
 
   // Middleware de gestión de errores
